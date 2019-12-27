@@ -1,0 +1,28 @@
+{
+  "name": "T12306",
+  "version": "0.0.0",
+  "description": "12306 javascript client",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "node test"
+  },
+  "author": "lsong",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/song940/12306.git"
+  },
+  "keywords": [
+    "12306"
+  ],
+  "bugs": {
+    "url": "https://github.com/song940/12306/issues"
+  },
+  "homepage": "https://github.com/song940/12306#readme",
+  "dependencies": {
+    "tiny-network": "^0.0.2"
+  }
+}
