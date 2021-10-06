@@ -1,6 +1,6 @@
 {
-  "name": "T12306",
-  "version": "0.0.0",
+  "name": "node-12306",
+  "version": "0.0.1",
   "description": "12306 javascript client",
   "main": "index.js",
   "directories": {
@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/song940/12306#readme",
   "dependencies": {
-    "tiny-network": "^0.0.2"
+    "tiny-network": "latest"
   }
 }

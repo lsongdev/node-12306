@@ -61,6 +61,11 @@ const T12306 = options => {
      * @param {*} to 
      * @param {*} date 
      * @param {*} purpose_codes 
+     * https://kyfw.12306.cn/otn/leftTicket/queryY?
+     * leftTicketDTO.train_date=2021-10-06&
+     * leftTicketDTO.from_station=BJP&
+     * leftTicketDTO.to_station=SHH&
+     * purpose_codes=ADULT
      */
     query(from, to, date, purpose_codes = 'ADULT') {
       const define = {
@@ -100,7 +105,7 @@ const T12306 = options => {
       });
       return Promise
         .resolve()
-        .then(() => get(`${BASE}/otn/leftTicket/queryZ?${query}`, headers))
+        .then(() => get(`${BASE}/otn/leftTicket/queryY?${query}`, headers))
         .then(ensureStatusCode(200))
         .then(readStream)
         .then(JSON.parse)
@@ -185,6 +190,30 @@ const T12306 = options => {
         .then(JSON.parse)
         .then(ensureResultCode(0))
         .then(res => res.uamtk)
+    },
+    create_qrcode() {
+      // https://kyfw.12306.cn/passport/web/create-qr64
+      const headers = useHeaders()
+      const payload = qs.stringify({ appid: 'otn' });
+      return Promise
+        .resolve()
+        .then(() => post(`${BASE}/passport/web/create-qr64`, payload, headers))
+        .then(ensureStatusCode(200))
+        .then(readStream)
+        .then(JSON.parse)
+        .then(ensureResultCode(0))
+    },
+    check_qrcode(uuid) {
+      // https://kyfw.12306.cn/passport/web/checkqr
+      const headers = useHeaders()
+      const payload = qs.stringify({ appid: 'otn', uuid });
+      return Promise
+        .resolve()
+        .then(() => post(`${BASE}/passport/web/checkqr`))
+        .then(ensureStatusCode(200))
+        .then(readStream)
+        .then(JSON.parse)
+        .then(ensureResultCode(0))
     },
     logdevice() {
       const url = `https://kyfw.12306.cn/otn/HttpZF/logdevice`;

@@ -1,9 +1,7 @@
 const T12306 = require('..');
 
 (async () => {
-
   const train = T12306();
-  const res = await train.logdevice();
-  console.log(res);
-
+  const list = await train.query('BJP', 'SHH', '2021-10-07');
+  console.log(list);
 })();

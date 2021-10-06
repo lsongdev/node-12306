@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-tiny-network@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/tiny-network/-/tiny-network-0.0.2.tgz#1b5149557436b2ceeeaa35a0c41baf1ef369336f"
-  integrity sha512-+M/zaCL+FyksHzRkk0BkZx3Jc4mgUh1lktj46cNK9fn4OBf3RltCT4SPgGSWCBGOVtMyz3phFF61GL86EQs8lg==
+tiny-network@latest:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/tiny-network/-/tiny-network-0.0.6.tgz#f67658f8bbdf8ee45bf767a7a4471aca85430dc5"
+  integrity sha512-fYNn6nnbKZFch5nd1aWtwVwJG7zJc5dcyypKx1PgJvv1EFr/tUhQPSFx5Tw6lKTVqemxZystG8mkbQuu/P/R5g==

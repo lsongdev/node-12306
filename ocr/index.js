@@ -2,16 +2,16 @@ const assert = require('assert');
 const qs = require('querystring');
 const { post, ensureStatusCode, readStream } = require('tiny-network');
 
+const { T12306_OCR_API = `https://12306-ocr.pjialin.com/check/` } = process.env;
+
 module.exports = img => {
   const payload = qs.stringify({ img });
   const headers = {
     'Content-Type': 'application/x-www-form-urlencoded;',
   };
-  const url = `http://localhost:8082/check/`;
-  // const url = `https://12306-ocr.pjialin.com/check/`;
   return Promise
     .resolve()
-    .then(() => post(url, payload, headers))
+    .then(() => post(T12306_OCR_API, payload, headers))
     .then(ensureStatusCode(200))
     .then(readStream)
     .then(JSON.parse)
