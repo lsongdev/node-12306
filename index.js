@@ -105,7 +105,7 @@ const T12306 = options => {
       });
       return Promise
         .resolve()
-        .then(() => get(`${BASE}/otn/leftTicket/queryY?${query}`, headers))
+        .then(() => get(`${BASE}/otn/leftTicket/query?${query}`, headers))
         .then(ensureStatusCode(200))
         .then(readStream)
         .then(JSON.parse)

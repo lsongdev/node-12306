@@ -27,7 +27,6 @@ const train = T12306();
   const passengers = await train.getPassengerDTOs();
 
 })();
-
 ```
 
 ### Contributing
