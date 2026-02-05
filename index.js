@@ -22,7 +22,8 @@ const handleResponse = res => {
   const err = new Error(res.message);
   err.response = res;
   assert.ok(res.status, err);
-  assert.equal(res.httpstatus, 200, err);
+  // Accept both 200 and 304 status codes
+  assert(res.httpstatus === 200 || res.httpstatus === 304, `Expected status 200 or 304, got ${res.httpstatus}`);
   return res.data;
 };
 
@@ -99,13 +100,14 @@ const T12306 = options => {
         'leftTicketDTO.to_station': to,
         purpose_codes,
       });
-      const headers = ({
-        'user-agent': ua,
-        'cookie': `_jc_save_fromDate=;`
+      const headers = useHeaders({
+        'referer': `${BASE}/otn/leftTicket/init`,
+        'origin': BASE,
+        'user-agent': ua
       });
       return Promise
         .resolve()
-        .then(() => get(`${BASE}/otn/leftTicket/query?${query}`, headers))
+        .then(() => get(`${BASE}/otn/leftTicket/queryG?${query}`, headers))  // Updated endpoint
         .then(ensureStatusCode(200))
         .then(readStream)
         .then(JSON.parse)
