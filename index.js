@@ -68,7 +68,7 @@ const T12306 = options => {
      * leftTicketDTO.to_station=SHH&
      * purpose_codes=ADULT
      */
-    query(from, to, date, purpose_codes = 'ADULT') {
+    query(from, to, date = new Date().toISOString().split('T')[0], purpose_codes = 'ADULT') {
       const define = {
         '车次': 3,
         '出发站': 6,
