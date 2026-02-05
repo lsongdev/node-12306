@@ -29,7 +29,23 @@ const train = T12306();
 })();
 ```
 
-### Contributing
+### Examples
+
+Check out the [example](./example) directory for practical usage examples:
+
+- `friday-evening-trains.js` - Query evening trains from Qinghe (QIP) to Xiayuanbei (OKP) after 18:00
+- `find-available-trains.js` - Search for available seats in the next 14 days
+
+Run examples:
+```bash
+# Query evening trains on a specific date
+node example/friday-evening-trains.js 2026-02-05
+
+# Find available trains after 19:00 from Qinghe to Xiayuanbei
+node example/find-available-trains.js QIP OKP 19
+```
+
+## Contributing
 - Fork this Repo first
 - Clone your Repo
 - Install dependencies by `$ npm install`
