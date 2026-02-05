@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "12306 javascript client",
   "main": "index.js",
+  "bin": {
+    "train-query": "./bin/cli.js"
+  },
   "directories": {
     "example": "example"
   },
