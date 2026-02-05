@@ -101,9 +101,11 @@ const T12306 = options => {
         purpose_codes,
       });
       const headers = useHeaders({
-        'referer': `${BASE}/otn/leftTicket/init`,
+        'referer': `${BASE}/otn/leftTicket/init?linktypeid=dc&fs=%E5%8C%97%E4%BA%AC,BJP&ts=%E4%B8%8B%E8%8A%B1%E5%9B%AD%E5%8C%97,OKP&date=2026-02-05&flag=N,N,Y`,
         'origin': BASE,
-        'user-agent': ua
+        'user-agent': ua,
+        'x-requested-with': 'XMLHttpRequest',
+        'accept': '*/*'
       });
       return Promise
         .resolve()
