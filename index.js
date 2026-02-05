@@ -8,7 +8,6 @@ const assert = require('assert');
 const qs = require('querystring');
 const ocr = require('./ocr');
 const pkg = require('./package');
-const stations = require('./stations').split('@');
 
 const ensureResultCode = code => {
   return res => {
